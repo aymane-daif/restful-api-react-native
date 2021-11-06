@@ -15,7 +15,7 @@ public class UserRepositoryImpl implements UserRepository{
 
     @Override
     public int save(User user) {
-        jdbcTemplate.update(
+        return jdbcTemplate.update(
                 INSERT_USER_QUERY,
                 user.getId(),
                 user.getFirstName(),
@@ -25,6 +25,6 @@ public class UserRepositoryImpl implements UserRepository{
                 user.getPhone(),
                 user.getCin()
         );
-        return user.getId();
+
     }
 }
