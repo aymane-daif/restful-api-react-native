@@ -30,4 +30,4 @@ npm start
 
 ## Example of execution
 
-![example](./client/assets/sample.gif)
+![example](./client/assets/example.gif)

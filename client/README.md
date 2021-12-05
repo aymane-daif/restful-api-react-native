@@ -31,3 +31,5 @@ npm start
 ## Example of execution
 
 ![example](./client/assets/example.gif)
+
+![example2](https://media.giphy.com/media/vFKqnCdLPNOKc/giphy.gif)
