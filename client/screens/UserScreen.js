@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { Dimensions, SafeAreaView, StyleSheet, Text, View } from 'react-native';
 import axios from 'axios';
 
-import API_ENDPOINT from '../constants.js'
+import {API_ENDPOINT} from '../constants.js'
 
 export default function UserScreen({ route }) {
   const [userData, setUserData] = useState(null);

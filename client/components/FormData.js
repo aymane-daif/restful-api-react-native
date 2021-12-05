@@ -11,7 +11,7 @@ import {
 } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
 
-import API_ENDPOINT from '../constants.js'
+import {API_ENDPOINT} from '../constants.js'
 
 export default function FormData({ navigation }) {
   const [userData, setUserData] = useState({
