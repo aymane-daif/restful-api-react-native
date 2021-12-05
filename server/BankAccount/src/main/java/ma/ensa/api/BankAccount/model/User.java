@@ -1,10 +1,8 @@
 package ma.ensa.api.BankAccount.model;
 
-
 public class User {
-    private int id;
-    private String firstName;
-    private String lastName;
+    private Long id;
+    private String name;
     private String email;
     private String address;
     private String phone;
@@ -13,38 +11,30 @@ public class User {
     public User() {
     }
 
-    public User(int id, String firstName, String lastName, String email, String address, String phone, String cin) {
+    public User(Long id, String name, String email, String address, String phone, String cin) {
         this.id = id;
-        this.firstName = firstName;
-        this.lastName = lastName;
+        this.name = name;
         this.email = email;
         this.address = address;
         this.phone = phone;
         this.cin = cin;
     }
 
-    public int getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
-    public String getFirstName() {
-        return firstName;
+
+    public String getName() {
+        return name;
     }
 
-    public void setFirstName(String firstName) {
-        this.firstName = firstName;
-    }
-
-    public String getLastName() {
-        return lastName;
-    }
-
-    public void setLastName(String lastName) {
-        this.lastName = lastName;
+    public void setName(String name) {
+        this.name = name;
     }
 
     public String getEmail() {
@@ -79,16 +69,5 @@ public class User {
         this.cin = cin;
     }
 
-    @Override
-    public String toString() {
-        return "User{" +
-                "id=" + id +
-                ", firstName='" + firstName + '\'' +
-                ", lastName='" + lastName + '\'' +
-                ", email='" + email + '\'' +
-                ", address='" + address + '\'' +
-                ", phone='" + phone + '\'' +
-                ", cin='" + cin + '\'' +
-                '}';
-    }
+
 }

@@ -14,4 +14,6 @@ public class UserService {
     public int save(User user){
         return userRepositoryImpl.save(user);
     }
+
+    public User findByEmail(String email) {return userRepositoryImpl.findByEmail(email);}
 }

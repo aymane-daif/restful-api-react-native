@@ -1,54 +1,31 @@
 import React from 'react';
-import {
-  Dimensions,
-  ImageBackground,
-  Platform,
-  SafeAreaView,
-  StatusBar,
-  StyleSheet,
-  Text,
-  View
-} from 'react-native';
+import { NavigationContainer } from '@react-navigation/native';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
-import FormData from './components/FormData';
-import Navbar from './components/Navbar';
+import HomeScreen from './screens/HomeScreen';
+import UserScreen from './screens/UserScreen';
+
+const Stack = createNativeStackNavigator();
 
 export default function App() {
   return (
-    <SafeAreaView>
-      <ImageBackground
-        blurRadius={2}
-        resizeMode='cover'
-        source={require('./assets/welcome.jpg')}
-        style={styles.background}
-      >
-        <View style={styles.overlay}>
-          <Navbar />
-          <Text style={styles.heading}>Inscription</Text>
-          <FormData />
-        </View>
-        <StatusBar style='auto' />
-      </ImageBackground>
-    </SafeAreaView>
+    <NavigationContainer>
+      <Stack.Navigator>
+        <Stack.Screen
+          name='Home'
+          component={HomeScreen}
+          options={{
+            headerShown: false,
+          }}
+        />
+        <Stack.Screen
+          name='User'
+          component={UserScreen}
+          options={{
+            title: 'Back Home',
+          }}
+        />
+      </Stack.Navigator>
+    </NavigationContainer>
   );
 }
-
-const styles = StyleSheet.create({
-  background: {
-    backgroundColor: '#56BC58',
-    height: Dimensions.get('window').height,
-    paddingTop: Platform.OS === 'android' ? StatusBar.currentHeight - 15 : 0,
-  },
-  heading: {
-    color: '#f5f5f5',
-    fontFamily: Platform.OS === 'android' ? 'Roboto' : 'Apple',
-    fontSize: 26,
-    fontWeight: 'bold',
-    letterSpacing: 1,
-    margin: 20,
-  },
-  overlay: {
-    backgroundColor: 'rgba(0, 0, 0,.6)',
-    flex: 1,
-  },
-});
