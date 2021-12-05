@@ -26,7 +26,6 @@ public class UserRepositoryImpl implements UserRepository{
                 user.getPhone(),
                 user.getCin()
         );
-
     }
 
     @Override

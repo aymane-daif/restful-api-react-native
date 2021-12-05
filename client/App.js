@@ -22,7 +22,11 @@ export default function App() {
           name='User'
           component={UserScreen}
           options={{
-            title: 'Back Home',
+            title: 'Inscription',
+            headerStyle: {
+              backgroundColor: '#f4f4f4',
+            },
+            headerTintColor: '#60B99A',
           }}
         />
       </Stack.Navigator>

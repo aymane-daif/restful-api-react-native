@@ -2,7 +2,6 @@ import React from 'react';
 import {
   Dimensions,
   ImageBackground,
-  Platform,
   SafeAreaView,
   StatusBar,
   StyleSheet,
@@ -36,7 +35,6 @@ const styles = StyleSheet.create({
   background: {
     backgroundColor: '#56BC58',
     height: Dimensions.get('window').height,
-    paddingTop: Platform.OS === 'android' ? StatusBar.currentHeight - 15 : 0,
   },
   heading: {
     color: '#f5f5f5',
@@ -46,7 +44,8 @@ const styles = StyleSheet.create({
     margin: 20,
   },
   overlay: {
-    backgroundColor: 'rgba(0, 0, 0,.6)',
+    backgroundColor: 'rgba(0, 0, 0,.7)',
     flex: 1,
+    height: '100%',
   },
 });

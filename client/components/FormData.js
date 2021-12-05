@@ -1,5 +1,3 @@
-const API_ENDPOINT = 'http://192.168.56.1:1947/users';
-
 import React, { useState } from 'react';
 import axios from 'axios';
 import {
@@ -12,6 +10,8 @@ import {
   View,
 } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
+
+import API_ENDPOINT from '../constants.js'
 
 export default function FormData({ navigation }) {
   const [userData, setUserData] = useState({
@@ -135,7 +135,6 @@ export default function FormData({ navigation }) {
           <Text style={styles.btnText}>Accepter et continuer</Text>
         </TouchableOpacity>
       </View>
-      {/* {isAlertShowing && showAlert()} */}
     </SafeAreaView>
   );
 }

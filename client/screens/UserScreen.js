@@ -1,8 +1,8 @@
-const API_ENDPOINT = 'http://192.168.56.1:1947/users';
-
 import React, { useEffect, useState } from 'react';
-import { SafeAreaView, StyleSheet, Text, View } from 'react-native';
+import { Dimensions, SafeAreaView, StyleSheet, Text, View } from 'react-native';
 import axios from 'axios';
+
+import API_ENDPOINT from '../constants.js'
 
 export default function UserScreen({ route }) {
   const [userData, setUserData] = useState(null);
@@ -26,29 +26,32 @@ export default function UserScreen({ route }) {
   return (
     <SafeAreaView>
       {userData && (
-        <View>
-          <Text>
-            Vous avez réussir l'inscription👏👏. Voici vos informations:{' '}
-          </Text>
-          <View>
+        <View style={styles.container}>
+          <View style={styles.welcome}>
+            👏👏
+            <Text style={styles.welcomeMessage}>
+              Vous avez réussir l'inscription.
+            </Text>
+          </View>
+          <View style={styles.row}>
             <Text>Nom: </Text>
-            <Text>{userData.name}</Text>
+            <Text style={styles.value}>{userData.name}</Text>
           </View>
-          <View>
+          <View style={styles.row}>
             <Text>Adresse électronique: </Text>
-            <Text>{userData.email}</Text>
+            <Text style={styles.value}>{userData.email}</Text>
           </View>
-          <View>
+          <View style={styles.row}>
             <Text>Adresse: </Text>
-            <Text>{userData.address}</Text>
+            <Text style={styles.value}>{userData.address}</Text>
           </View>
-          <View>
+          <View style={styles.row}>
             <Text>Numéro de téléphone: </Text>
-            <Text>{userData.phone}</Text>
+            <Text style={styles.value}>{userData.phone}</Text>
           </View>
-          <View>
+          <View style={styles.row}>
             <Text>CIN: </Text>
-            <Text>{userData.cin}</Text>
+            <Text style={styles.value}>{userData.cin}</Text>
           </View>
         </View>
       )}
@@ -56,4 +59,36 @@ export default function UserScreen({ route }) {
   );
 }
 
-const styles = StyleSheet.create({});
+const styles = StyleSheet.create({
+  container: {
+    backgroundColor: '#fff',
+    padding: '10px',
+    height: Dimensions.get('window').height,
+  },
+  welcome: {
+    display: 'flex',
+    flexDirection: 'row',
+    alignItems: 'center',
+    marginVertical: 20,
+  },
+  welcomeMessage: {
+    marginLeft: 8,
+    color: '#56BC58',
+    fontSize: 16,
+    fontWeight: 'bold',
+    letterSpacing: 1,
+  },
+  row: {
+    display: 'flex',
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+    fontSize: '14px',
+    fontWeight: 'bold',
+    padding: '15px',
+  },
+  value: {
+    fontWeight: 'normal',
+    color: '#777',
+  },
+});

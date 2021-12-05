@@ -11,13 +11,11 @@ public class UserController {
     @Autowired
     UserService userService;
 
-    @CrossOrigin(origins = "*")
     @PostMapping("/users")
     public int createUser(@RequestBody User user) {
         return userService.save(user);
     }
 
-    @CrossOrigin(origins = "*")
     @GetMapping("/users/{email}")
     public User getUser(@PathVariable("email") String email){
         return userService.findByEmail(email);
